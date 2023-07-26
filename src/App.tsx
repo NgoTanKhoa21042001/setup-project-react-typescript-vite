@@ -1,24 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Container } from 'react-bootstrap'
 import './App.css'
-import { Routes, Route } from 'react-router-dom'
+import { Container } from 'react-bootstrap'
+import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
-import About from './pages/About'
 import Store from './pages/Store'
-import Navbar from './components/Navbar'
-import { ShoppingCartProvider } from './context/ShoppingCartContext'
+import About from './pages/About'
+import { Navbar } from './components/Navbar'
 function App() {
   return (
-    <ShoppingCartProvider>
+    <div>
       <Navbar />
-      <Container>
+      <Container className='mb-4'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/store' element={<Store />} />
           <Route path='/about' element={<About />} />
         </Routes>
       </Container>
-    </ShoppingCartProvider>
+    </div>
   )
 }
 
